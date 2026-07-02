@@ -2,6 +2,9 @@ langchain
 langchain-core
 langchain-community
 langchain-ollama
+langchain-huggingface
+langchain-openai
 langchain-text-splitters
 faiss-cpu
 python-dotenv
+sentence-transformers

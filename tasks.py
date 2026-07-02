@@ -2,8 +2,12 @@ import os
 from langchain.agents import create_agent
 from langchain_ollama import ChatOllama
 from langchain_community.vectorstores import FAISS
-from langchain_community.embeddings import HuggingFaceEmbeddings
 from dotenv import load_dotenv
+
+try:
+    from langchain_huggingface import HuggingFaceEmbeddings
+except ImportError:
+    from langchain_community.embeddings import HuggingFaceEmbeddings
 
 from agents import ConversationBufferWindowMemory, RAGAgent
 from tools import build_tools

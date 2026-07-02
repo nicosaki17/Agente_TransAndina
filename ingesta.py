@@ -1,13 +1,15 @@
 import os
-from dotenv import load_dotenv
 import glob
 from typing import Any, List
 from dotenv import load_dotenv
 from langchain_community.document_loaders import TextLoader
 from langchain_community.vectorstores import FAISS
-from langchain_openai import OpenAIEmbeddings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
-from langchain_community.embeddings import HuggingFaceEmbeddings
+
+try:
+    from langchain_huggingface import HuggingFaceEmbeddings
+except ImportError:
+    from langchain_community.embeddings import HuggingFaceEmbeddings
 
 load_dotenv(dotenv_path=".env", override=True)
 
