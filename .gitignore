@@ -1,0 +1,7 @@
+__pycache__/
+*.pyc
+.env
+index_transandina/
+data/
+venv/
+.venv/
